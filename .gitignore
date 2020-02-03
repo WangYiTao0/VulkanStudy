@@ -1,6 +1,6 @@
 # Binaries
-**bin/
-**bin-obj/
+/bin/
+bin-obj/
 !3rdPart/bin/premake/*
 
 # Files

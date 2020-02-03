@@ -20,9 +20,10 @@ workspace "VulkanStudy"
 -- Include directories relative to 
 IncludeDir = {}
 IncludeDir["glm"] = "3rdpart/glm"
+IncludeDir["GLFW"] = "3rdpart/GLFW/include"
 -- Projects
 group "Dependencies"
-    
+    include "VulkanStudy/3rdpart/GLFW"
 group ""
 
 include "VulkanStudy"
