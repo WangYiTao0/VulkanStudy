@@ -1,7 +1,7 @@
 workspace "VulkanStudy"
     architecture "x64"
     targetdir "build"
-    startproject "Sandbox"
+    startproject "VulkanStudy"
 
     configurations
     {
@@ -21,7 +21,7 @@ workspace "VulkanStudy"
 IncludeDir = {}
 IncludeDir["glm"] = "3rdpart/glm"
 IncludeDir["GLFW"] = "3rdpart/GLFW/include"
-IncludeDir["Vulkan"] = "3rdpart/Vulkan1.1.130.0"
+IncludeDir["Vulkan"] = "3rdpart/Vulkan1.2.131.1"
 -- Projects
 group "Dependencies"
     include "VulkanStudy/3rdpart/GLFW"

@@ -1,5 +1,6 @@
 project "VulkanStudy"
-kind "StaticLib"
+--kind "StaticLib"
+kind "ConsoleApp"
 language "c++"
 cppdialect "c++17"
 staticruntime "on"
@@ -28,12 +29,12 @@ includedirs
     "src",
     "%{IncludeDir.glm}",
     "%{IncludeDir.GLFW}",
-    "%{IncludeDir.Vulkan}/include",
+    "3rdpart/Vulkan1.2.131.1/include",
 }
 
 libdirs
 { 
-    "%{IncludeDir.Vulkan}/Lib",
+    "3rdpart/Vulkan1.2.131.1/Lib",
  }
 
 links
