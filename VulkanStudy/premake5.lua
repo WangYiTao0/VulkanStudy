@@ -7,8 +7,8 @@ staticruntime "on"
 targetdir("bin/" .. outputdir .. "%{prj.name}")
 objdir("bin-obj/" .. outputdir .. "%{prj.name}")
 
-pchheader "aspch.h"
-pchsource "src/aspch.cpp"
+--pchheader "aspch.h"
+--pchsource "src/aspch.cpp"
 
 files
 {
@@ -26,12 +26,13 @@ defines
 includedirs
 {
     "src",
-    "%{IncludeDir.glm}"
+    "%{IncludeDir.glm}",
+    "%{IncludeDir.GLFW}",
 }
 
 links
 {
-
+    "GLFW",
 }
 
 filter "system:windows"
