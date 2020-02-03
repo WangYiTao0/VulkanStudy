@@ -13,7 +13,9 @@ pchsource "src/aspch.cpp"
 files
 {
     "src/**.h",
-    "src/**.cpp"
+    "src/**.cpp",
+    "3rdparty/glm/glm/**.hpp",
+    "3rdparty/glm/glm/**.inl"
 }
 
 defines
@@ -23,12 +25,13 @@ defines
 
 includedirs
 {
-    "src"
+    "src",
+    "%{IncludeDir.glm}"
 }
 
 links
 {
-    opengl32
+
 }
 
 filter "system:windows"
@@ -36,7 +39,7 @@ filter "system:windows"
 
     defines
     {
-        "AS_PLATFORM_WINDOWS"
+
     }
 
 filter "configurations:Debug"

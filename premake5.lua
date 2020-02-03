@@ -18,10 +18,11 @@ workspace "VulkanStudy"
     outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 -- Include directories relative to 
-
+IncludeDir = {}
+IncludeDir["glm"] = "3rdpart/glm"
 -- Projects
 group "Dependencies"
-
+    
 group ""
 
 include "VulkanStudy"
