@@ -16,12 +16,12 @@
     
     includedirs
     {
-        "../asEngine/src",
+        "../VulkanStudy/src",
     }
 
     links
     {
-        "asEngine"
+        "VulkanStudy"
     }
 
     filter "system:windows"

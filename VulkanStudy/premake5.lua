@@ -4,8 +4,8 @@ language "c++"
 cppdialect "c++17"
 staticruntime "on"
 
-targetdir("bin/" .. outputdir .. "%{prj.name}")
-objdir("bin-obj/" .. outputdir .. "%{prj.name}")
+targetdir("..bin/" .. outputdir .. "%{prj.name}")
+objdir("..bin-obj/" .. outputdir .. "%{prj.name}")
 
 --pchheader "aspch.h"
 --pchsource "src/aspch.cpp"
@@ -28,11 +28,18 @@ includedirs
     "src",
     "%{IncludeDir.glm}",
     "%{IncludeDir.GLFW}",
+    "%{IncludeDir.Vulkan}/include",
 }
+
+libdirs
+{ 
+    "%{IncludeDir.Vulkan}/Lib",
+ }
 
 links
 {
     "GLFW",
+    "vulkan-1"
 }
 
 filter "system:windows"
