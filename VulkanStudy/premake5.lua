@@ -29,12 +29,12 @@ includedirs
     "src",
     "%{IncludeDir.glm}",
     "%{IncludeDir.GLFW}",
-    "3rdpart/Vulkan1.2.131.1/include",
+    "$(VULKAN_SDK)/include",
 }
 
 libdirs
 { 
-    "3rdpart/Vulkan1.2.131.1/Lib",
+    "$(VULKAN_SDK)/Lib",
  }
 
 links
