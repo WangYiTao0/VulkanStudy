@@ -9,6 +9,18 @@
 const int WIDTH = 800;
 const int HEIGHT = 600;
 
+const std::vector<const char*> validationLayers = {
+	"VK_LAYER_KHRONOS_validation"
+};
+
+#ifdef NDEBUG
+const bool enableValidationLayers = false;
+#else
+const bool enableValidationLayers = true;
+#endif
+
+VkResult CreateDebugUtilsMessengerEXT()
+
 class Application
 {
 public:
@@ -41,6 +53,8 @@ private:
 		}
 	}
 	void Cleanup() {
+		
+		vkDestroyInstance(instance, nullptr);
 		glfwDestroyWindow(window);
 		glfwTerminate();
 	}
@@ -72,6 +86,17 @@ private:
 			throw std::runtime_error("error to create instance");
 		}
 
+		uint32_t extensionCount = 0;
+		vkEnumerateInstanceExtensionProperties(nullptr, &extensionCount, nullptr);
+		std::vector<VkExtensionProperties> extensions(extensionCount);
+		vkEnumerateInstanceExtensionProperties(nullptr, &extensionCount, extensions.data());
+
+		std::cout << "available extensions: " << std::endl;
+
+		for (const auto& extension : extensions)
+		{
+			std::cout << "\t" << extension.extensionName << std::endl;
+		}
 	}
 private:
 	GLFWwindow* window;
@@ -83,6 +108,7 @@ int main()
 	Application app;
 	
 	try {
+
 		app.Run();
 	}
 	catch (const std::exception & e)
